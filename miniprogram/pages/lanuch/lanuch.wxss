@@ -1,0 +1,5 @@
+/* pages/lanuch/lanuch.wxss */
+.img{
+    margin-left: 13%;
+    width:74%;
+}

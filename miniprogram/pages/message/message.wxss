@@ -1,0 +1,91 @@
+Page {
+    background: #f6f6f6;
+}
+
+.kefubtn {
+    border: none;
+    background-color: #fff;
+    border-radius: 50%;
+    /* height: 90rpx；; */
+}
+
+button::after {
+    border: none;
+}
+
+.ceil {
+    /* margin-top: 20rpx; */
+    background: #fff;
+    /* height: 290rpx; */
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 90rpx;
+    height: 90rpx;
+    margin-top: 20rpx;
+    margin-left: 25rpx;
+}
+
+.name {
+    display: inline-block;
+    position: absolute;
+    margin-top: 20rpx;
+    margin-left: 50rpx;
+    color: #111;
+    font-size: 34rpx;
+    font-weight: 500;
+}
+
+.daren {
+    display: inline-block;
+    margin-left: -10rpx;
+    z-index: 1;
+    position: absolute;
+    height: 50rpx;
+    width: 50rpx;
+}
+
+.dipei{
+    display: inline-block;
+    position: absolute;
+    margin-left: -10rpx;
+    height: 25rpx;
+    width: 46rpx;
+}
+
+.contents {
+    color: #999;
+    font-size: 30rpx;
+    display: inline-block;
+    position: absolute;
+    margin-left: 50rpx;
+    margin-top: 72rpx;
+}
+
+.time {
+    color: #999;
+    font-size: 26rpx;
+    display: inline-block;
+    position: absolute;
+    margin-left: 50rpx;
+    margin-top: 125rpx;
+}
+
+.bigimg {
+    position: absolute;
+    margin-left: 61%;
+    margin-top: 18rpx;
+    display: inline-block;
+    border-radius: 12rpx;
+    width: 150rpx;
+    height: 150rpx;
+}
+
+.row {
+    margin-top: 55rpx;
+    height: 5px;
+    margin-left: 165rpx;
+    background: #fff;
+    border-bottom: 2rpx #f0f0f0 solid;
+}

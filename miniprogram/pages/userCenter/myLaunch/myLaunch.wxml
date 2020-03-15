@@ -1,0 +1,41 @@
+<!--miniprogram/pages/userCenter/myLaunch/myLaunch.wxml-->
+<!--pages/collect/collect.wxml-->
+<cu-custom bgImage="https://s2.ax1x.com/2019/05/02/Etiyng.jpg" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">荷包服务</view>
+</cu-custom>
+
+
+<scroll-view scroll-x class="bg-white nav text-center">
+    <view class="cu-item {{0==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="0">
+        <text class="cuIcon-camerafill"></text> 全部订单
+    </view>
+    <view class="cu-item {{1==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="1">
+        <text class="cuIcon-upstagefill"></text> 待支付
+    </view>
+    <view class="cu-item {{2==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="2">
+        <text class="cuIcon-clothesfill"></text> 待服务
+    </view>
+    <view class="cu-item {{3==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="3">
+        <text class="cuIcon-clothesfill"></text> 待确认
+    </view>
+    <view class="cu-item {{4==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="4">
+        <text class="cuIcon-clothesfill"></text> 已完成
+    </view>
+    <view class="cu-item {{5==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="5">
+        <text class="cuIcon-clothesfill"></text> 退款单
+    </view>
+    <view class="cu-item {{6==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="6">
+        <text class="cuIcon-clothesfill"></text> 售后
+    </view>
+</scroll-view>
+
+
+
+<view wx:if="{{detail}}" style="text-align:cenetr;margin-top:160rpx;margin-left:52%;transform:translate(-50%,0%)">
+    <image style="width:300rpx;height:300rpx;" src="/images/message/no-bill.svg"></image>
+
+<view style="text-align:center;margin-top:-40rpx;"> <text style="color:#8A8A8A;font-size:28rpx;">暂无订单˚‧º·(˚ ˃̣̣̥᷄⌓˂̣̣̥᷅ )‧º·˚
+</text></view>
+
+</view>

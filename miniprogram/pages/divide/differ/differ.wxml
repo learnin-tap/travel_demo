@@ -1,0 +1,6 @@
+<!--pages/divide/differ/differ.wxml-->
+<cu-custom bgImage="https://s2.ax1x.com/2019/05/02/Etiyng.jpg" isBack="{{true}}" style="z-index:99;">
+    <view slot="backText">返回</view>
+    <view slot="content">带你理解达人与地陪
+    </view>
+</cu-custom>

@@ -1,0 +1,24 @@
+<!--pages/userCenter/about/about.wxml-->
+<cu-custom bgImage="https://s2.ax1x.com/2019/05/02/Etiyng.jpg" isBack="{{true}}">
+    <view slot="backText"></view>
+    <view slot="content">关于顷遥</view>
+</cu-custom>
+
+<image bindtap="click" class="logo" src="/images/1.png" />
+<view class="qy">顷 遥
+    <text decode="{{true}}" style="font-size:28rpx;margin-top:20rpx;">&nbsp;&nbsp;v1.0.1</text>
+</view>
+
+
+<view class="main" style="top:36rpx;">{{introduce1}}</view>
+<view class="main">{{introduce2}}</view>
+
+
+<view class="email">
+    <text class="icon-mail text-gray"></text> 联系邮箱: service@qytrip.com</view>
+<view class="wechat">
+    <text  class="icon-weixin text-gray lg"></text> 微信公众号: 顷遥旅行</view>
+
+<view class="bottom">
+    <text>顷遥创意旅行有限公司  版权所有\nCopyright © qytrip.com All Right Reserved</text>
+</view>

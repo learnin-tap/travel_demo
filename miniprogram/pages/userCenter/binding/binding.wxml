@@ -1,0 +1,78 @@
+<!--pages/userCenter/binding/binding.wxml-->
+<cu-custom bgImage="https://s2.ax1x.com/2019/05/02/Etiyng.jpg" isBack="{{true}}">
+    <view slot="backText"></view>
+    <view slot="content">账号管理</view>
+</cu-custom>
+
+<view class='cu-list menu'>
+    <view bindtap="phone" class="cu-item arrow">
+        <view class="content padding-tb-sm">
+            <view>
+                <text class="cuIcon-clothesfill text-black margin-right-xs"></text> 手机号</view>
+            <view class="text-black text-sm">
+                <text class="cuIcon-infofill margin-right-xs"></text> 132****2877</view>
+        </view>
+        <view class="action">
+            <view class="content">
+                <text class="text-black">更换</text>
+            </view>
+        </view>
+    </view>
+
+    <view class="cu-item arrow" bindtap="email">
+        <view class="content padding-tb-sm">
+            <view>
+                <text class="cuIcon-clothesfill text-blue margin-right-xs"></text> 邮箱</view>
+            <view class="text-gray text-sm">
+                <text class="cuIcon-infofill margin-right-xs"></text> 绑定邮箱</view>
+        </view>
+        <view class="action">
+            <view class="content">
+                <text class="text-grey">绑定</text>
+            </view>
+        </view>
+    </view>
+
+    <view class="cu-item  arrow" bindtap="fix">
+        <view class="content">
+            <text class="text-black">修改账号密码</text>
+        </view>
+    </view>
+
+</view>
+
+
+<view class='cu-list menu'>
+    <view class="cu-item  arrow">
+        <view class="content">
+            <text class="text-black">QQ</text>
+        </view>
+        <view class="action">
+            <view class="content">
+                <text class="text-black">已绑定</text>
+            </view>
+        </view>
+    </view>
+
+    <view class="cu-item  arrow" bindtap="sina">
+        <view class="content">
+            <text class="text-black">新浪微博</text>
+        </view>
+        <view class="action">
+            <view class="content">
+                <text class="text-grey">未绑定</text>
+            </view>
+        </view>
+    </view>
+
+    <view class="cu-item  arrow" bindtap="wechat">
+        <view class="content">
+            <text class="text-black">微信</text>
+        </view>
+        <view class="action">
+            <view class="content">
+                <text class="text-grey">未绑定</text>
+            </view>
+        </view>
+    </view>
+</view>

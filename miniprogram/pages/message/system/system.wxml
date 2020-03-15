@@ -1,0 +1,9 @@
+<!--pages/message/system/system.wxml-->
+<cu-custom bgImage="https://s2.ax1x.com/2019/05/02/Etiyng.jpg" isBack="{{true}}">
+    <view slot="backText"></view>
+    <view slot="content">系统消息</view>
+</cu-custom>
+<view style="margin-top:80rpx;margin-left:55%;transform:translate(-55%,0%);">
+    <image style="width:300rpx;height:300rpx;" src="/images/message/none2.svg"></image>
+</view>
+<view style="font-size:28rpx;text-align:center;">亲，暂无任何消息哟~</view>

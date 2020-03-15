@@ -1,0 +1,114 @@
+{
+    "pages": [
+        "pages/login/login",
+        "pages/register/register",
+        "pages/promise/promise",
+        "pages/assign/assign",
+        "pages/assign1/assign1",
+        "pages/index/index",
+        "pages/info/info",
+        "pages/activateSearch/activateSearch",
+        "pages/activities/activities",
+        "pages/lanuch/lanuch",
+        "pages/message/message",
+        "pages/message/question/question",
+        "pages/message/system/system",
+        "pages/userCenter/userCenter",
+        "pages/message/getInvite/getInvite",
+        "pages/message/sendInvite/sendInvite",
+        "pages/userCenter/personal/personal",
+        "pages/userCenter/editDetail/editDetail",
+        "pages/userCenter/dailySign/dailySign",
+        "pages/userCenter/activityManage/activityManage",
+        "pages/userCenter/club/clubDetail",
+        "pages/userCenter/authenticationCenter/authenticationCenter",
+        "pages/userCenter/fix/fix",
+        "pages/userCenter/message/message",
+        "pages/userCenter/binding/binding",
+        "pages/userCenter/about/about",
+        "pages/userCenter/collect/collect",
+        "pages/userCenter/advice/advice",
+        "pages/homePage/homePage",
+        "pages/lanuch/yuePai/yuePai",
+        "pages/lanuch/work/work",
+        "pages/launch/work/work_detail/index",
+        "pages/lanuch/daily/daily",
+        "pages/lanuch/trip/trip",
+        "pages/lanuch/waypoint/waypoint",
+        "pages/divide/divide",
+        "pages/divide/differ/differ",
+        "pages/userCenter/authenticationCenter/IDCardOCR",
+        "pages/userCenter/authenticationCenter/authenticationInfo",
+        "pages/userCenter/myLaunch/myLaunch",
+        "pages/userCenter/daren/daren",
+        "pages/userCenter/next/next",
+        "pages/divide/divideDetail",
+        "pages/divide/divideDetail/information/index",
+        "pages/message/getInvite/inviteDetail",
+        "pages/message/sendInvite/inviteDetail",
+        "pages/message/sendInvite/test",
+        "pages/readme/readme"
+    ],
+    "window": {
+        "navigationStyle": "custom",
+        "backgroundTextStyle": "dark",
+        "enablePullDownRefresh": false
+    },
+    "usingComponents": {
+        "cu-custom": "/colorui/components/cu-custom"
+    },
+    "tabBar": {
+        "color": "#bfbfbf",
+        "selectedColor": "#5397ff",
+        "backgroundColor": "#ffffff",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "主页",
+                "iconPath": "images/icons/home.png",
+                "selectedIconPath": "images/icons/selectedhome.png"
+            },
+            {
+                "pagePath": "pages/divide/divide",
+                "text": "土著在线",
+                "iconPath": "images/icons/fenlei.png",
+                "selectedIconPath": "images/icons/selectedfenlei.png"
+            },
+            {
+                "pagePath": "pages/lanuch/lanuch",
+                "text": "旅者专区",
+                "iconPath": "images/icons/selectedfabu.png",
+                "selectedIconPath": "images/icons/selectedfabu.png"
+            },
+            {
+                "pagePath": "pages/message/message",
+                "text": "消息",
+                "iconPath": "images/icons/message.png",
+                "selectedIconPath": "images/icons/selectedmessage.png"
+            },
+            {
+                "pagePath": "pages/userCenter/userCenter",
+                "text": "我的",
+                "iconPath": "images/icons/lianxiren.png",
+                "selectedIconPath": "images/icons/selectedlianxiren.png"
+            }
+        ]
+    },
+    "plugins": {
+        "calendar": {
+            "version": "1.2.1",
+            "provider": "wx23a9cef3522e4f7c"
+        },
+        "brickLayout": {
+            "version": "0.2.0",
+            "provider": "wx3c042630f3cdc175"
+        }
+    },
+    "permission": {
+        "scope.userLocation": {
+            "desc": "你的位置信息将用于定位当地推荐的特色小吃等"
+        }
+    },
+    "resizable": true,
+    "sitemapLocation": "sitemap.json"
+}

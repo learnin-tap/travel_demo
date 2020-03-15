@@ -1,0 +1,9 @@
+<!--pages/userCenter/activityManage/activityManage.wxml-->
+<cu-custom bgImage="https://s2.ax1x.com/2019/05/02/Etiyng.jpg" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">我的收藏</view>
+</cu-custom>
+
+<view style="margin-top:200rpx;margin-left:50%;transform:translate(-50%,0%)">
+<image src="/images/message/none1.svg"></image>
+</view>

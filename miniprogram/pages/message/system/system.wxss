@@ -1,0 +1,4 @@
+/* pages/message/system/system.wxss */
+page{
+    /* background: #333; */
+}

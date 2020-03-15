@@ -1,0 +1,130 @@
+/* pages/userCenter/userCenter.wxss */
+
+.page__bd {
+    padding-bottom: 0;
+}
+
+.weui-media-box__thumb {
+    border: 1px solid beige;
+    border-radius: 50%;
+}
+
+.become {
+    display: inline-block;
+    height: 48rpx;
+    width: 190rpx;
+    margin-left: 40%;
+    border-radius: 30rpx;
+    background: #444;
+    position: relative;
+    top: -0.6vh;
+}
+
+.will {
+    top: -0.3vh;
+    display: inline-block;
+    color: #fff;
+    font-size: 28rpx;
+    margin-left: 15rpx;
+    position: relative;
+}
+
+.write {
+    width: 30rpx;
+    height: 30rpx;
+    margin-top: 8rpx;
+    margin-left: 24rpx;
+}
+
+.fix {
+    display: inline-block;
+    position: relative;
+    left: 90%;
+    top: -20rpx;
+    z-index: 5;
+}
+
+.indicate {
+    /* margin-bottom: -90rpx; */
+    background: red;
+    /* width: 300rpx; */
+    display: inline-block;
+    height:60rpx;
+    /* margin-top: -45rpx; */
+}
+
+.money{
+     animation: sway 2s ease-in-out infinite;
+    z-index: 99;
+    font-size: 20rpx;
+    color: #fff;
+    background-color: #5397FF;
+    width: 140rpx;
+    border-radius: 8rpx;
+    padding: 3rpx 8rpx;
+    position: absolute;
+    right: 5vw;
+    top:103rpx;
+    text-align: center;
+}
+.up {
+     animation: sway 2s ease-in-out infinite;
+    z-index: 90;
+    position: absolute;
+    right:8vw;
+    top: 137rpx;
+    border-right: 12rpx solid transparent;
+    border-left: 12rpx solid transparent;
+    border-top: 14rpx solid #5397FF;
+}
+
+
+@keyframes sway {
+  0% {
+    transform: translate3d(0,6rpx, 0) rotate(0deg);
+  }
+
+  17% {
+    transform: translate3d(0, 2rpx, 0) rotate(0deg);
+  }
+
+  34% {
+    transform: translate3d(0, -2rpx, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(0, -6rpx, 0) rotate(0deg);
+  }
+
+  67% {
+    transform: translate3d(0, -2rpx, 0) rotate(0deg);
+  }
+
+  84% {
+    transform: translate3d(0, 2rpx, 0) rotate(0deg);
+  }
+
+  100% {
+    transform: translate3d(0, 6rpx, 0) rotate(0deg);
+  }
+}
+
+.page.show {
+    overflow: hidden;
+}
+
+.switch-sex::after {
+    content: "\e716";
+}
+
+.switch-sex::before {
+    content: "\e7a9";
+}
+
+.switch-music::after {
+    content: "\e66a";
+}
+
+.switch-music::before {
+    content: "\e6db";
+}

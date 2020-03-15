@@ -1,0 +1,97 @@
+<cu-custom bgImage="https://s2.ax1x.com/2019/05/02/Etiyng.jpg" isBack="{{true}}" style="z-index:99;">
+    <view slot="backText">返回</view>
+    <view slot="content">旅者攻略</view>
+</cu-custom>
+
+
+
+<view class="cu-bar search bg-white">
+    <view class="search-form round">
+        <text class="cuIcon-search"></text>
+        <input style="margin-left:50rpx;" type="text" placeholder="搜索精彩旅行攻略" confirm-type="search"></input>
+    </view>
+    <view class="action">
+        <button bindtap="goto" class="cu-btn bg-blue shadow-blur round">搜索</button>
+    </view>
+</view>
+
+<view style="margin-top:20rpx;margin-left:20rpx;">
+    <text style="font-weight:bold;">热搜攻略</text>
+</view>
+
+
+<view class="grid col-4 padding-sm">
+
+    <view bindtap="go1" class="margin-tb-sm text-center">
+        <button class="cu-btn round bg-white" role="button" aria-disabled="false">穷游</button>
+    </view>
+
+    <view bindtap="go2" class="margin-tb-sm text-center">
+        <button class="cu-btn round bg-white" role="button" aria-disabled="false">达人推荐</button>
+    </view>
+
+    <view bindtap="go3" class="margin-tb-sm text-center">
+        <button class="cu-btn round bg-white" role="button" aria-disabled="false">丽江</button>
+    </view>
+
+    <view bindtap="go4" class="margin-tb-sm text-center">
+        <button class="cu-btn round bg-white" role="button" aria-disabled="false">地陪推荐</button>
+    </view>
+
+    <view bindtap="go5" class="margin-tb-sm text-center">
+        <button class="cu-btn round bg-white" role="button" aria-disabled="false">自由行</button>
+    </view>
+
+
+    <view bindtap="go7" class="margin-tb-sm text-center">
+        <button class="cu-btn round bg-white" role="button" aria-disabled="false">酒店</button>
+    </view>
+
+    <view bindtap="go8" class="margin-tb-sm text-center">
+        <button class="cu-btn round bg-white" role="button" aria-disabled="false">美食打卡</button>
+    </view>
+
+    <view bindtap="go9" class="margin-tb-sm text-center">
+        <button class="cu-btn round bg-white" role="button" aria-disabled="false"> 三日游</button>
+    </view>
+
+
+</view>
+
+
+
+
+
+
+<view class="weui-tab">
+    <view class="weui-navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+            <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                <view class="weui-navbar__title">{{item}}</view>
+            </view>
+        </block>
+        <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+    </view>
+    <view class="weui-tab__panel">
+        <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+
+
+            <view style="height:50rpx;"></view>
+            <brickLayout dataSet="{{dataSet}}" option="{{brick_option}}" bind:tapCard="tapCard" bind:tapLike="handleLike" bind:tapUser="handleUserEvent" bind:onCardExpanded="handleExpand" />
+            <view class="fixeded" bindtap="tap">
+                <image class="add" src="/images/message/add.png"></image>
+            </view>
+
+
+
+
+
+        </view>
+        <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+                <view style="margin-left:39%;margin-top:200rpx;">暂无分享~</view>
+            <view class="fixeded" bindtap="tap">
+                <image class="add" src="/images/message/add.png"></image>
+            </view>
+        </view>
+    </view>
+</view>

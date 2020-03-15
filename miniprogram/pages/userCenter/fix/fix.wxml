@@ -1,0 +1,70 @@
+<!--pages/userCenter/fix/fix.wxml-->
+<cu-custom bgImage="https://s2.ax1x.com/2019/05/02/Etiyng.jpg" isBack="{{true}}">
+    <view slot="backText"></view>
+    <view slot="content">设置</view>
+</cu-custom>
+
+<view class='cu-list menu'>
+    <navigator class="cu-item arrow" hover-class="none" url='/pages/userCenter/binding/binding' open-type="navigate">
+        <view class="content">
+            <text class="icon-peoplelist text-blue"></text>
+            <text class="text-grey">账号绑定</text>
+        </view>
+    </navigator>
+
+    <navigator class="cu-item arrow" hover-class="none" url="/pages/userCenter/message/message" open-type="navigate">
+        <view class="content">
+            <text class="icon-pay text-blue"></text>
+            <text class="text-grey">消息通知</text>
+        </view>
+        <view class="action">
+            <view class="content" style="width:100rpx;background:#5397FF;border-radius:8rpx;opacity:.8">
+                <text class="text-white" style="margin-left:14rpx;font-size:24rpx;">未设置</text>
+            </view>
+        </view>
+    </navigator>
+
+
+
+    <view style="margin-top:10rpx;" bindtap="clean" class="cu-item arrow">
+        <view class="content">
+            <text class="icon-refresh text-blue"></text>
+            <text class="text-grey">清除缓存</text>
+        </view>
+        <view class="action">
+            <view class="content">
+                <text class="text-grey">{{edata}}MB</text>
+            </view>
+        </view>
+    </view>
+
+    <view class="cu-item ">
+        <view class="content">
+            <text class="icon-down text-blue"></text>
+            <text class="text-grey">3G/4G/5G网络下载图片</text>
+        </view>
+        <view class="action">
+            <switch class="blue sm" bindchange="switchSex"></switch>
+        </view>
+    </view>
+
+    <navigator class="cu-item arrow" hover-class="none" url="/pages/userCenter/about/about" open-type="navigate">
+        <view class="content">
+            <text class="icon-tag text-blue"></text>
+            <text class="text-grey">关于顷遥</text>
+        </view>
+        <view class="action">
+            <view class="content" style="width:90rpx;background:#5397FF;border-radius:12rpx;opacity:.8">
+                <text class="text-white" style="margin-left:13rpx;font-size:28rpx;">NEW</text>
+            </view>
+        </view>
+    </navigator>
+
+    <view bindtap="exit" class="cu-item arrow" style="margin-top:20rpx;">
+        <view class="content">
+            <text class="text-blue">退出登录</text>
+        </view>
+    </view>
+
+</view>
+

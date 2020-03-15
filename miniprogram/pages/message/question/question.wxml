@@ -1,0 +1,21 @@
+<!--pages/message/question/question.wxml-->
+<cu-custom bgImage="https://s2.ax1x.com/2019/05/02/Etiyng.jpg" isBack="{{true}}">
+    <view slot="backText"></view>
+    <view slot="content">服务问答</view>
+</cu-custom>
+
+
+<view class="nav ">
+    <view class="{{selected?'red':'default'}}" bindtap="selected">
+        <view class='ershou'>游客提问</view>
+    </view>
+    <view class="{{selected1?'red':'default'}}" bindtap="selected1">
+        <view class='wupin'>我的提问</view>
+    </view>
+</view>
+<view class="{{selected?'show':'hidden'}}">
+    <view class="none">暂无数据</view>
+</view>
+<view class=" {{selected1? 'show': 'hidden'}} ">
+    <view class="none">您还未提过issue</view>
+</view>

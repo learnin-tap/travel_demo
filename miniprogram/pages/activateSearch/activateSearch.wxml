@@ -1,0 +1,64 @@
+<!--pages/activateSearch/activateSearch.wxml-->
+<cu-custom bgImage="https://s2.ax1x.com/2019/05/02/Etiyng.jpg" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">景点探索</view>
+</cu-custom>
+
+<view class="cu-bar search bg-white">
+    <view class="search-form round">
+        <text class="cuIcon-search"></text>
+        <input style="margin-left:50rpx;" type="text" placeholder="查询热门景点、网红打卡胜地" confirm-type="search"></input>
+    </view>
+    <view class="action">
+        <button bindtap="goto" class="cu-btn bg-blue shadow-blur round">搜索</button>
+    </view>
+</view>
+
+<view style="margin-top:20rpx;margin-left:20rpx;">
+    <text style="font-weight:bold;">大家在搜</text>
+</view>
+
+
+<view  class="grid col-4 padding-sm">
+
+    <view bindtap="go1" class="margin-tb-sm text-center">
+        <button class="cu-btn round bg-white" role="button" aria-disabled="false">鼓浪屿</button>
+    </view>
+
+    <view bindtap="go2" class="margin-tb-sm text-center">
+        <button class="cu-btn round bg-white" role="button" aria-disabled="false">候鸟</button>
+    </view>
+
+    <view bindtap="go3" class="margin-tb-sm text-center">
+        <button class="cu-btn round bg-white" role="button" aria-disabled="false">日光岩</button>
+    </view>
+
+    <view bindtap="go4" class="margin-tb-sm text-center">
+        <button class="cu-btn round bg-white" role="button" aria-disabled="false">厦大</button>
+    </view>
+
+    <view bindtap="go5" class="margin-tb-sm text-center">
+        <button class="cu-btn round bg-white" role="button" aria-disabled="false">椰风寨</button>
+    </view>
+
+    <view bindtap="go6" class="margin-tb-sm text-center">
+        <button class="cu-btn round bg-white" role="button" aria-disabled="false">曾厝垵</button>
+    </view>
+
+    <view bindtap="go7" class="margin-tb-sm text-center">
+        <button class="cu-btn round bg-white" role="button" aria-disabled="false">骑行</button>
+    </view>
+
+    <view bindtap="go8" class="margin-tb-sm text-center">
+        <button class="cu-btn round bg-white" role="button" aria-disabled="false">海滨</button>
+    </view>
+
+    <view bindtap="go9" class="margin-tb-sm text-center">
+        <button class="cu-btn round bg-white" role="button" aria-disabled="false">猫咪</button>
+    </view>
+
+    <view bindtap="go10" class="margin-tb-sm text-center">
+        <button class="cu-btn round bg-white" role="button" aria-disabled="false">步行街</button>
+    </view>
+
+</view>

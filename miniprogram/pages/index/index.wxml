@@ -1,0 +1,53 @@
+<view class='cu-load load-modal' wx:if="{{show}}">
+  <image style="width:150rpx;height:150rpx;" src='/images/1.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>加载中...</view>
+</view>
+
+<view class='page'>
+    <view class='page__bd'>
+        <view class="bg-img padding-tb-xl" style="background-image:url('http://wx4.sinaimg.cn/mw690/006UdlVNgy1g2v2t1ih8jj31hc0p0qej.jpg');background-size:cover;">
+            <view class="cu-bar">
+                <view class="content text-bold text-white">
+                    顷遥
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="top" >
+    <image class="avatar" src="{{userInfo.avatarUrl}}" bindtap="avatar"/>
+    <view class="action">
+        <picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
+            <view class="word">
+                <text style="font-weight:bold;font-size:30rpx;top:10rpx;" class="text-black">{{region[2]}}</text>
+                <text decode="{{true}}" style="font-weight:bold;font-size:32rpx;">&nbsp;v\n</text>
+                <text style="bottom:5rpx;font-size:24rpx;color:#5E5E5E;font-weight:bold;">{{temp}}</text>
+            </view>
+        </picker>
+    </view>
+</view>
+
+
+<view class='box '   bind:tap="onActivateSearch">
+    <view class="cu-bar search ">
+        <view class="search-form round "style="background:#FFFFFF;">
+            <image src="/images/icons/search.png" />    
+            <input type="text" placeholder="搜索你想玩的地方" confirm-type="search"></input>
+        </view>
+    </view>
+</view>
+
+<view class="online" bindtap="onLocal">
+    <image src="/images/icons/study.png"></image>
+</view>
+
+
+
+
+
+<!-- "{{state}}?'115.71648':'115.71748' " -->
+<map id="map" scale="{{defaultScale}}" longitude='{{longitude}}' latitude='{{latitude}}' style='height:{{windowHeight}}px' markers="{{stores}}" subkey="{{mapSubKey}}" show-compass="{{true}}" bindmarkertap="onMarkerTap">
+</map>
+
+

@@ -1,0 +1,13 @@
+/* pages/assign/assign.wxss */
+.container{
+    width: 90%;
+    margin-left: 5%;
+}
+
+.common{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 40rpx;
+    font-size: 28rpx;
+    line-height: 56rpx;
+}

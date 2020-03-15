@@ -1,0 +1,59 @@
+<!--pages/userCenter/message/message.wxml-->
+<cu-custom bgImage="https://s2.ax1x.com/2019/05/02/Etiyng.jpg" isBack="{{true}}">
+    <view slot="backText"></view>
+    <view slot="content">消息通知</view>
+</cu-custom>
+
+<view class="cu-list menu">
+    <view class="cu-item ">
+        <view class="content">
+
+            <text class="text-black">评论我</text>
+        </view>
+        <view class="action">
+            <switch class="blue sm" bindchange="switchSex" checked></switch>
+        </view>
+    </view>
+
+    <view class="cu-item ">
+        <view class="content">
+
+            <text class="text-black">私信我</text>
+        </view>
+        <view class="action">
+            <switch class="blue sm" bindchange="switchSex" checked></switch>
+        </view>
+    </view>
+
+    <view class="cu-item ">
+        <view class="content">
+            <text class="text-black">赞我</text>
+        </view>
+        <view class="action">
+            <switch class="blue sm" bindchange="switchSex" checked></switch>
+        </view>
+    </view>
+
+    <!-- <view class="cu-item " style="margin-top:6rpx;">
+        <view class="content">
+            <text class="text-black">其他</text>
+        </view>
+        <view class="action">
+            <switch class="blue sm" bindchange="switchSex" checked></switch>
+        </view>
+    </view>
+    <view style="color:gray;margin-left:30rpx;"></view> -->
+
+
+    <view class="cu-item">
+        <view class="content padding-tb-sm">
+            <view>
+                <text class="cuIcon-clothesfill text-blue margin-right-xs"></text> 其它</view>
+            <view class="text-gray text-sm">
+                <text class="cuIcon-infofill margin-right-xs"></text> 含@我、关注我、系统通知、公告</view>
+        </view>
+        <view class="action">
+            <switch class="blue sm" bindchange="switchSex" checked></switch>
+        </view>
+    </view>
+</view>

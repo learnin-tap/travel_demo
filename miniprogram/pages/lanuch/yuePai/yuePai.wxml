@@ -1,0 +1,5 @@
+<!--pages/lanuch/yuePai/yuePai.wxml-->
+<cu-custom bgImage="https://s2.ax1x.com/2019/05/02/Etiyng.jpg" isBack="{{true}}" style="z-index:99;">
+  <view slot="backText">返回</view>
+  <view slot="content">一键约玩</view>
+</cu-custom>

@@ -1,0 +1,58 @@
+/* pages/userCenter/about/about.wxss */
+
+page {
+    background: #fff;
+}
+
+.logo {
+    width: 313rpx;
+    height: 282rpx;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.qy {
+    position: relative;
+    display: flex;
+    top: 20rpx;
+    font-size: 42rpx;
+    font-weight: bolder;
+    width: 200rpx;
+    margin-left: 50%;
+    margin-bottom: 42rpx;
+    transform: translate(-50%, 0%);
+}
+
+.main {
+    width: 90%;
+    margin-left: 5%;
+    line-height: 28px;
+    font-size: 28rpx;
+    color: #333;
+    text-indent: 2em;
+}
+
+.email {
+    margin-top: 50rpx;
+    border-top: 2px #f6f8f8 solid;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+}
+
+.wechat {
+    height: 55px;
+    line-height: 55px;
+    border-top: 2px #f6f8f8 solid;
+    border-bottom: 2px #f6f8f8 solid;
+    text-align: center;
+}
+
+.bottom{
+    margin-top: 35px;
+    margin-bottom: 35px;
+    text-align: center;
+    font-size: 24rpx;
+    font-weight: 100;
+    color:#88828E; 
+}

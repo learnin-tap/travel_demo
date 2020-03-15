@@ -1,0 +1,38 @@
+<!--pages/divide/divideDetail/information/index.wxml-->
+<cu-custom bgImage="https://s2.ax1x.com/2019/05/02/Etiyng.jpg" isBack="{{true}}" style="z-index:99;">
+    <view slot="backText">返回</view>
+    <view slot="content">资料</view>
+</cu-custom>
+
+<view style="font-size:38rpx;margin-left:30rpx;margin-top:50rpx;font-weight:500;">基本信息</view>
+<view style="margin-top:30rpx;" >
+<text style="margin-left:30rpx;color:#999999;font-size:34rpx;">达人编号</text>
+<text style="position:fixed;right:30rpx;color:#2A2A2A;font-size:34rpx;">393</text>
+</view>
+
+<view style="margin-top:30rpx;" >
+<text style="margin-left:30rpx;color:#999999;font-size:34rpx;">基本资料</text>
+<text style="position:fixed;right:30rpx; color:#2A2A2A;font-size:34rpx;">女-21-天秤座-福建厦门市</text>
+</view>
+
+<view style="margin-top:30rpx;" >
+<text style="margin-left:30rpx;color:#999999;font-size:34rpx;">身高体重</text>
+<text style="position:fixed;right:30rpx; color:#2A2A2A;font-size:34rpx;">172cm-52kg</text>
+</view>
+
+<view style="margin-top:30rpx;" >
+<text style="margin-left:30rpx;color:#999999;font-size:34rpx;">联系方式</text>
+<text style="position:fixed;right:30rpx; color:#2A2A2A;font-size:34rpx;">153****1996</text>
+</view>
+
+
+<view style="margin-top:30rpx;" >
+<text style="margin-left:30rpx;color:#999999;font-size:34rpx;">加入顷遥时间</text>
+<text style="position:fixed;right:30rpx; color:#2A2A2A;font-size:34rpx;">2020-01-15</text>
+</view>
+
+<!-- 横线 -->
+<view style="margin-top:50rpx;height:1rpx;background:#DFDFDF;"></view>
+
+<view style="font-size:38rpx;margin-left:25rpx;margin-top:40rpx;font-weight:500;">个人简介</view>
+<view style="margin-top:20rpx;margin-left:30rpx;color:#999999;font-size:34rpx;">一个开朗优秀的女孩</view>

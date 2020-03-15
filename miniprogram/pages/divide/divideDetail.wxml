@@ -1,0 +1,214 @@
+<!--pages/divide/divideDetail.wxml-->
+<view class='cu-load load-modal' wx:if="{{show}}">
+    <image style="width:150rpx;height:150rpx;" src='/images/1.png' class='png' mode='aspectFit'></image>
+    <view class='gray-text'>加载中...</view>
+</view>
+
+<cu-custom bgImage="https://s2.ax1x.com/2019/05/02/Etiyng.jpg" isBack="{{true}}" style="z-index:99;">
+    <view slot="backText">返回</view>
+    <view slot="content">详情</view>
+</cu-custom>
+
+<swiper autoplay='true' interval='4000' circular="true">
+    <swiper-item>
+        <image src='cloud://jxufe-utf5u.6a78-jxufe-utf5u-1259584938/store-images/鼓浪屿.jpg'></image>
+    </swiper-item>
+    <swiper-item>
+        <image src='cloud://jxufe-utf5u.6a78-jxufe-utf5u-1259584938/store-images/鼓浪屿2.jpg'></image>
+    </swiper-item>
+    <swiper-item>
+        <image src='cloud://jxufe-utf5u.6a78-jxufe-utf5u-1259584938/store-images/鼓浪屿3.jpg'></image>
+    </swiper-item>
+    <swiper-item>
+        <image src='cloud://jxufe-utf5u.6a78-jxufe-utf5u-1259584938/store-images/椰风寨3.jpg'></image>
+    </swiper-item>
+</swiper>
+
+<view style="margin-left:30rpx;margin-top:25rpx;">
+    <text style="font-size:42rpx;">Lina</text>
+    <text decode="true" style="margin-left:40rpx; " class="icon-female text-pink">&nbsp;27</text>
+    <view bindtap="information" style="margin-left:84%;text-align:center;margin-top:-78rpx;">
+        <image style="margin-top:20rpx;width:55rpx;height:55rpx;" src="/images/message/check.png"></image>
+        <image style="width:55rpx;height:55rpx;" src="/images/message/right.png"></image>
+    </view>
+
+    <view style="height:60rpx;">
+        <image style="width:160rpx;height:60rpx;display:inline-block;" src="/images/icons/sign.png"></image>
+        <view style="margin-left:120rpx;margin-top:-65rpx;">
+            <text style="color:#FFC61A;margin-left:60rpx;top:160rpx;">4.8分</text>
+        </view>
+    </view>
+
+    <view style="margin-top:20rpx;">
+        <text style="line-height:45rpx;" class="icon-location text-gray" decode="true">&nbsp;{{sheng}}{{shi}}\n</text>
+        <text style="line-height:65rpx;" class="icon-tag text-gray" decode="true">&nbsp;全部&nbsp;|&nbsp;当地陪游</text>
+    </view>
+    <view class="container1">
+        <image class="img" bind:tap="onLike" src="{{like?yesSrc:noSrc}}" />
+        <view class="txt">
+            <text>{{count}}</text>
+        </view>
+    </view>
+</view>
+
+<view style="margin-top:20rpx;height:2rpx;background:#EEEEEE"></view>
+
+<view style="margin-top:30rpx;width:50%;height:50rpx;text-align:center; border-right: 2rpx solid #EEEEEE;">
+    <text bindtap="concern" decode="true" style="color:#999999">关注 &nbsp;&nbsp;</text>
+    <text bindtap="concern">2</text>
+</view>
+<view style="border-left: 2rpx solid #EEEEEE;margin-left:50%;width:50%;margin-top:-50rpx;text-align:center;">
+    <text bindtap="concern" decode="true" style="color:#999999">粉丝 &nbsp;&nbsp;</text>
+    <text bindtap="concern">23</text>
+</view>
+<!-- 白色高度 -->
+<view style="height:30rpx;background:#ffffff;"></view>
+<!-- 灰色高度 -->
+<view style="height:20rpx;background:#F6F6F6"></view>
+
+
+<view style="margin-left:25rpx;margin-top:20rpx;">TA的标签</view>
+<view style="margin-left:25rpx;" class="grid col-5 ">
+    <view class="margin-tb-sm text-center">
+        <text class="cu-btn round bg-gray" style="color:#4D4D4D">土著达人</text>
+    </view>
+    <view class="margin-tb-sm text-center">
+        <text class="cu-btn round bg-gray" style="color:#4D4D4D">开车</text>
+    </view>
+    <view class="margin-tb-sm text-center">
+        <text class="cu-btn round bg-gray" style="color:#4D4D4D">上班族</text>
+    </view>
+    <view class="margin-tb-sm text-center">
+        <text class="cu-btn round bg-gray" style="color:#4D4D4D">吃货</text>
+    </view>
+    <view class="margin-tb-sm text-center">
+        <text class="cu-btn round bg-gray" style="color:#4D4D4D">P图小能手</text>
+    </view>
+    <view class="margin-tb-sm text-center">
+        <text class="cu-btn round bg-gray" style="color:#4D4D4D">旅拍</text>
+    </view>
+    <view class="margin-tb-sm text-center">
+        <text class="cu-btn round bg-gray" style="color:#4D4D4D">摄影</text>
+    </view>
+    <view class="margin-tb-sm text-center">
+        <text class="cu-btn round bg-gray" style="color:#4D4D4D">铲屎官</text>
+    </view>
+    <view class="margin-tb-sm text-center">
+        <text class="cu-btn round bg-gray" style="color:#4D4D4D">逗比</text>
+    </view>
+</view>
+
+<!-- 灰色高度 -->
+<view style="height:20rpx;background:#F6F6F6"></view>
+<view style="margin-left:25rpx;margin-top:20rpx;">TA的相册</view>
+
+<view class='bottom'>
+    <scroll-view scroll-x="true" class="move-left" scroll-left="{{scrollLeft}}">
+        <block wx:for="{{searchLogoList}}" wx:key="key" wx:for-index="key" wx:for-item="i">
+            <view class="item">
+                <image class='img' mode="widthFix" data-current="{{key}}" src='{{i.img}}' data-id="{{i.id}}" data-src="{{i.img}}" bindtap="selectImage">
+                </image>
+            </view>
+        </block>
+    </scroll-view>
+</view>
+
+
+<!--pages/swiperTab/swiperTab.wxml-->
+<view>
+    <!--顶部导航栏-->
+    <view class="swiper-tab">
+        <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">服务</view>
+        <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">问答
+            <text style="color:#9D9D9D">(0)</text>
+        </view>
+        <view class="tab-item {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">评价
+            <text style="color:#9D9D9D">(9)</text>
+        </view>
+    </view>
+    <!--内容主体-->
+    <swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange">
+        <swiper-item>
+            <view style="margin:45rpx 35rpx;color:#2A2A2A">
+                <text>全部(1)</text>
+                <text style="margin-left:50rpx;">一日游(1)</text>
+            </view>
+            <view class="tuzhu" style="margin-bottom:25rpx;">
+                <image style="height:240rpx;mode:aspectFit;width:100%;border-radius: 12rpx 12rpx 0 0;" src="/images/beauty.png"></image>
+                <view style="margin-top:5rpx;margin-left:15rpx;text-align:center;">
+                    <text style="font-size:32rpx;line-height:24rpx;">厦门本地女孩带您一起中山路/曾厝埯/鼓浪屿</text>
+                </view>
+                <view>
+                    <text style="margin-top:5rpx;margin-left:25rpx;margin-bottom:20rpx;color:#5193FE;font-size:45rpx;font-weight:bold;">￥666</text>
+                    <text style="font-size:36rpx;color:#7A7A7A" decode="true">&nbsp;/1天</text>
+                </view>
+            </view>
+
+            <view bindtap="server" style="margin-top:40rpx;margin-left:50%;transform:translate(-50%,0%);border-radius:50rpx;width:300rpx;line-height:60rpx;height:60rpx;border:1rpx #DFDFDF solid;text-align:center;">
+                <text style="">查看更多服务</text>
+            </view>
+
+
+        </swiper-item>
+        <swiper-item>
+            <view style="margin-top:100rpx;text-align:center;">
+                <image style="width:220rpx;height:220rpx;" src="/images/message/no-bill.svg" />
+            </view>
+            <view style="text-align:center;font-size:28rpx;">
+                <text style="color:#888888;">暂无数据</text>
+            </view>
+            <view bindtap="question" style="margin-top:40rpx;margin-left:50%;transform:translate(-50%,0%);border-radius:50rpx;width:300rpx;line-height:60rpx;height:60rpx;border:1rpx #DFDFDF solid;text-align:center;">
+                <text style="">查看更多问答</text>
+            </view>
+        </swiper-item>
+        <swiper-item>
+            <view style="border-bottom:3rpx #EFEFEF solid;height100rpx;line-height:100rpx;text-align:midium;margin-top:25rpx;margin-left:30rpx;font-size:32rpx;">
+                <text decode="true">综合评价：&nbsp;</text>
+                <image style="margin-top:20rpx;width:40rpx;height:40rpx;" src="/images/message/star.png"></image>
+                <image style="width:40rpx;height:40rpx;" src="/images/message/star.png"></image>
+                <image style="width:40rpx;height:40rpx;" src="/images/message/star.png"></image>
+                <image style="width:40rpx;height:40rpx;" src="/images/message/star.png"></image>
+                <image style="width:40rpx;height:40rpx;" src="/images/message/star.png"></image>
+                <text decode="true" style="color:#FFB64D;">&nbsp;&nbsp;4.9分</text>
+                <text style="margin-left:130rpx;color:#999999">9人评价</text>
+            </view>
+            <!-- 个人评价 -->
+            <view style="margin-left:30rpx;margin-top:30rpx;">
+                <image style="border-radius:50%;width:85rpx;height:85rpx;" src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10002.jpg"></image>
+                <view style="margin-top:-115rpx;margin-left:110rpx;">
+                    <text style="font-size:32rpx;margin-top:-30rpx;line-height:120rpx;">Sunday</text>
+                    <text style="margin-left:310rpx;color:#999999">2020-01-12</text>
+                </view>
+            </view>
+            <view style="margin-left:30rpx;margin-top:15rpx;font-size:36rpx;">
+                <text style="color:#999999;">态度：</text>
+                <text style="color:#5B8DFE;">5.0</text>
+                <text style="margin-left:80rpx;color:#999999">时效</text>
+                <text style="margin-left:30rpx;color:#5B8DFE;">5.0</text>
+                <text style="margin-left:80rpx;color:#999999;">质量</text>
+                <text style="margin-left:30rpx;color:#5B8DFE">5.0</text>
+                <view style="width:96%;margin-top:20rpx;margin-left:2%;">
+                    <text>不给5星好评都感觉对不起自己，玩的超级开心，服务很贴心。行程也很好，都很好，整个团4个人，感觉很自由又很有收获。谢谢导游Tina</text>
+                </view>
+                <view style="margin-top:30rpx;width:240rpx; height:75rpx;text-align:center;line-height:75rpx;border-radius:12rpx;border:2rpx #EDEDED solid;color:#7B7B7B;">管家颜值高</view>
+                <view style="margin-bottom: rpx;margin-top:-75rpx;margin-left:270rpx;width:240rpx; height:75rpx;text-align:center;line-height:75rpx;border-radius:12rpx;border:2rpx #EDEDED solid;color:#7B7B7B;">当地老司机</view>
+            </view>
+            <view style="margin-top:25rpx;border-bottom:1rpx #EEEEEE solid;"></view>
+
+            <view bindtap="question1" style="margin-top:40rpx;margin-left:50%;transform:translate(-50%,0%);border-radius:50rpx;width:300rpx;line-height:60rpx;height:60rpx;border:1rpx #DFDFDF solid;text-align:center;">
+                <text style="">查看更多评价</text>
+            </view>
+
+        </swiper-item>
+    </swiper>
+
+    <view bindtap="tap" wx:if="{{concern=='+关注'}}">
+        <view style="height:75rpx;text-align:center;border-right:2rpx #EEEEEE solid;width:33.3%;color:#5D8CFF;">{{concern}}</view>
+    </view>
+    <view bindtap="tap" wx:elif="{{concern=='已关注'}}">
+        <view style="height:75rpx;text-align:center;border-right:2rpx #EEEEEE solid;width:33.3%;color:#2A2A2A;">{{concern}}</view>
+    </view>
+
+    <view bindtap="sixin" style="margin-top:-75rpx;height:75rpx;text-align:center;border-right:2rpx #EEEEEE solid;width:33.3%;margin-left:33.3%;color:#2A2A2A;">私信</view>
+    <view bindtap="sixin" style="margin-top:-75rpx;margin-left:66.6%;height:75rpx;text-align:center;border-right:2rpx #EEEEEE solid;width:33.3%;color:#2A2A2A;">分享</view>
+</view>

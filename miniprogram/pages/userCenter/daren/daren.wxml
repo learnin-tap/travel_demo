@@ -1,0 +1,60 @@
+<!--pages/userCenter/daren/daren.wxml-->
+<cu-custom bgImage="https://s2.ax1x.com/2019/05/02/Etiyng.jpg" isBack="{{true}}">
+    <view slot="backText"></view>
+    <view slot="content">申请达人</view>
+</cu-custom>
+
+<view>
+    <image src="https://s2.ax1x.com/2020/02/11/17FRzt.jpg" style="width:100%;height:260rpx;"></image>
+</view>
+<view style="height:50rpx;background:#F6F6F6;text-align:midium;margin-left:50rpx;color:#7A7A7A">你的信息仅用于平台审核，绝不外泄</view>
+
+
+<view class="cu-list menu sm-border card-menu " style='margin-top:20rpx;'>
+
+    <view class="cu-item">
+        <text class="icon-my lg text-blue"></text>
+        <view class="title padding-left-sm">真实姓名：</view>
+        <input placeholder="必填" bindinput='getRealName'></input>
+    </view>
+    <view class="cu-item">
+        <text class="icon-keyboard lg text-blue"></text>
+        <view class="title padding-left-sm">身份证号：</view>
+        <input placeholder="必填" bindinput='getAuthNumber'></input>
+    </view>
+
+    <view class='cu-item '>
+        <text class="icon-location text-blue"></text>
+        <view class="title padding-left-sm">所在地址：</view>
+        <input placeholder="必填" bindinput='getLocation'></input>
+    </view>
+
+    <view class='cu-item '>
+        <text class="icon-phone text-blue"></text>
+        <view class="title padding-left-sm">联系方式：</view>
+        <input placeholder="必填" bindinput='getContact'></input>
+    </view>
+
+    <view class='cu-item '>
+        <text class="icon-my text-blue"></text>
+        <view class="title padding-left-sm">邀请人手机：</view>
+        <input placeholder="填邀请人号码（选填）" bindinput=''></input>
+    </view>
+
+   
+    <view class='cu-item '>
+         <text class="">自我介绍：</text>
+    </view>
+
+
+    <view class="cu-form-group align-start">
+        <textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaBInput" placeholder="在这里介绍一下自己吧"></textarea>
+    </view>
+
+
+    <view class='bg-white'>
+        <view class="padding">
+            <button class="cu-btn block bg-skyBlue margin-tb-lg lg " bindtap='submit'>下一步</button>
+        </view>
+    </view>
+</view>

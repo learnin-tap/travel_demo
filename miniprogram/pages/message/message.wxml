@@ -1,0 +1,112 @@
+<cu-custom bgImage="https://s2.ax1x.com/2019/05/02/Etiyng.jpg">
+    <view slot="content">消息</view>
+</cu-custom>
+
+<view style="width:96%;margin-left:2%;border-radius:15rpx;margin-top:30rpx;margin-bottom:30rpx;;height:205rpx;background:#ffffff;display:flex;">
+    <view style="width:80%;margin-left:10%;display:flex;">
+        <view style="margin-left:1%;" bindtap="system">
+            <image style="margin-top:25rpx;width:110rpx;height:110rpx;" src="/images/message/message.png"></image>
+            <view style="font-size:28rpx;margin:-10rpx -8rpx;">系统消息</view>
+        </view>
+
+
+        <view style="margin-left:20%;" bindtap="question">
+            <image style="margin-top:25rpx;width:110rpx;height:110rpx;" src="/images/message/question.png"></image>
+            <view style="font-size:28rpx;margin:-10rpx -3rpx;">服务问答</view>
+        </view>
+
+        <view style="margin-left:20%;">
+            <button class='kefubtn ' open-type="contact" bindcontact="handleContact">
+                <image style="margin-top:25rpx;width:110rpx;height:110rpx; " src="/images/message/answer.png "></image>
+                <view style="z-index:999;font-size:28rpx;margin:-44rpx -3rpx;">在线客服</view>
+                <view style="margin-top:20rpx;height:30rpx;"></view>
+            </button>
+        </view>
+
+    </view>
+</view>
+
+
+
+
+<view class="ceil">
+    <image src="cloud://jxufe-utf5u.6a78-jxufe-utf5u-1259584938/recommended/one.jpg" class="avatar"></image>
+    <!-- <view class="daren"> -->
+    <image class="dipei" style="display:inline-block;" src="/images/message/dipei.png"></image>
+    <!-- </view> -->
+    <view class="name">
+        <text>Amy__土著达人</text>
+    </view>
+    <view class="contents">
+        <text>不客气哈</text>
+    </view>
+    <view class="time">
+        <text>2小时前</text>
+    </view>
+    <image src="cloud://jxufe-utf5u.6a78-jxufe-utf5u-1259584938/store-images/厦门环岛路2.jpg" class="bigimg"></image>
+    <view class="row"></view>
+</view>
+<view class="ceil">
+    <image src="cloud://jxufe-utf5u.6a78-jxufe-utf5u-1259584938/recommended/two.jpg" class="avatar"></image>
+    <!-- <view class="daren"> -->
+    <image class="daren" style="display:inline-block;" src="/images/message/daren.svg"></image>
+    <!-- </view> -->
+    <view class="name">
+        <text>Lina</text>
+    </view>
+    <view class="contents">
+        <text>要提前三天预定哟~</text>
+    </view>
+    <view class="time">
+        <text>昨天19:27</text>
+    </view>
+    <image src="cloud://jxufe-utf5u.6a78-jxufe-utf5u-1259584938/store-images/椰风寨.jpg" class="bigimg"></image>
+    <view class="row"></view>
+</view>
+
+
+
+<view style="height:20rpx;background:#F0F0F0"></view>
+<view style="background:white;height:60rpx;">
+    <view style="background:white;height:10rpx;"></view>
+    <text style="margin-left:50rpx;margin-top:25rpx;" class="icon-time "></text>
+    <text decode="true" style="color:gray;font-size:28rpx;">&nbsp;两周前的消息</text>
+</view>
+
+
+
+<view class="ceil">
+    <image src="cloud://jxufe-utf5u.6a78-jxufe-utf5u-1259584938/recommended/three.jpg" class="avatar"></image>
+    <!-- <view class="daren"> -->
+    <image class="daren" style="display:inline-block;" src="/images/message/daren.svg"></image>
+    <!-- </view> -->
+    <view class="name">
+        <text>soga</text>
+    </view>
+    <view class="contents">
+        <text>到了香山码头观音山那里再...</text>
+    </view>
+    <view class="time">
+        <text>2020-01-22</text>
+    </view>
+    <image src="cloud://jxufe-utf5u.6a78-jxufe-utf5u-1259584938/store-images/厦门观音山2.jpg" class="bigimg"></image>
+    <view class="row"></view>
+</view>
+
+<view class="ceil">
+    <image src="cloud://jxufe-utf5u.6a78-jxufe-utf5u-1259584938/recommended/four.jpg" class="avatar"></image>
+    <!-- <view class="daren"> -->
+    <image class="daren" style="display:inline-block;" src="/images/message/VIP.svg"></image>
+    <!-- </view> -->
+    <view class="name">
+        <text>Jenny?</text>
+    </view>
+    <view class="contents">
+        <text>一起去鼓浪屿看海岛日落(看...</text>
+    </view>
+    <view class="time">
+        <text>2020-01-17</text>
+    </view>
+    <image src="cloud://jxufe-utf5u.6a78-jxufe-utf5u-1259584938/store-images/鼓浪屿2.jpg" class="bigimg"></image>
+    <view class="row"></view>
+</view>

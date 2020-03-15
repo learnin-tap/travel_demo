@@ -1,0 +1,52 @@
+/* pages/message/question/question.wxss */
+
+.nav {
+    width: 100%;
+    margin-top: 20rpx;
+    height: 100rpx;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1.5px solid #edece8;
+}
+
+.ershou {
+    width: 200rpx;
+    margin-left: 100rpx;
+}
+
+.wupin {
+    width: 200rpx;
+    margin-left: 100rpx;
+}
+
+.default {
+    line-height: 100rpx;
+    text-align: center;
+    flex: 1;
+    color: #7f7e7b;
+    font-weight: 700;
+    font-size: 30rpx;
+}
+
+.red {
+    line-height: 100rpx;
+    text-align: center;
+    flex: 1;
+    color: #4c94fe;
+    font-weight: 600;
+    font-size: 30rpx;
+    border-bottom: 2px solid #4c94fe;
+}
+
+.hidden {
+    display: none;
+    text-align: center;
+    line-height: 200px;
+}
+
+.none{
+    margin-top: 50rpx;
+    color: #333;
+    font-size: 24rpx;
+    text-align: center;
+}

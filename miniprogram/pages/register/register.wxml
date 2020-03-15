@@ -1,0 +1,105 @@
+<view class="player-container" style="background:url('https://s2.ax1x.com/2020/02/09/1fWYFS.jpg') center/cover no-repeat"></view>
+<view class="player-mask"></view>
+
+<view style="margin-top:150rpx;margin-left:12vw;font-size:54rpx;font-weight:bold;color:white;">登录后更精彩</view>
+<view style="margin-left:12vw;color:white">当地人带路，旅行故事期待与你相遇</view>
+<view style="margin-left:12vw;margin-top:160rpx;color:white;font-size:26rpx;"></view>
+
+
+<view class="nav ">
+
+    <view class="{{selected?'red':'default'}}" bindtap="selected">
+        <view class='ershou'>手机快捷登录/注册</view>
+    </view>
+
+    <view class="{{selected1?'red':'default'}}" bindtap="selected1">
+        <view class='wupin'>{{title_name}}</view>
+    </view>
+</view>
+
+<view class="{{selected?'show':'hidden'}}">
+    <view style="margin-top:10rpx;border-radius:8rpx;width:84vw;margin-left:8vw;" class="cu-form-group">
+        <view class="cu-capsule radius ">
+            <view class="cu-tag bg-blue">
+                +86
+            </view>
+            <view class="cu-tag line-blue">
+                中国大陆
+            </view>
+        </view>
+        <input style="margin-left:30rpx;" type="number" bindinput="getPhone" maxlength="15" placeholder="请输入手机号"></input>
+    </view>
+    <view style="border-radius:8rpx;width:84vw;margin-top:20rpx;margin-left:8vw;" class="cu-form-group">
+        <input style="margin-left:60rpx;" bindinput="getCode" placeholder="请输入验证码"></input>
+        <view wx:if="{{code_id=='获取验证码'}}" bindtap="sendSMS">
+            <button class="cu-btn bg-blue shadow">{{code_id}}</button>
+        </view>
+        <view wx:else>
+            <button class="cu-btn bg-blue shadow">{{code_id}}</button>
+        </view>
+    </view>
+
+    <view wx:if="{{phone&&message_code}}">
+        <button bindtap="think" class="btn1">{{btn}}</button>
+    </view>
+    <view wx:else>
+        <button disabled="{{true}}" class="btn2">{{btn}}</button>
+    </view>
+
+    <view style="text-align:center;margin-top:10rpx;font-size:28rpx;font-weight:520">
+        <text class=" icon-roundcheckfill text-blue" style="font-weight:350"></text>
+        <text style="color:white;margin-left:15rpx;">同意</text>
+        <text bindtap="promise" style="color:#5397FF">{{promise}}</text>
+        <text style="color:white;">&</text>
+        <text bindtap="assign" style="color:#5397FF;">{{assign}}</text>
+    </view>
+
+</view>
+
+
+<view class=" {{selected1? 'show': 'hidden'}} ">
+    <view class="cu-form-group margin-top" style="border-radius:8rpx;width:84vw;margin-top:20rpx;margin-left:8vw;">
+        <view class="title">账号：</view>
+        <input value="{{title_code}}" maxlength="15" bindinput="getTitle" placeholder="请输入手机/邮箱"></input>
+    </view>
+
+
+    <view style="border-radius:8rpx;width:84vw;margin-top:20rpx;margin-left:8vw;" class="cu-form-group">
+        <view class="title">密码：</view>
+        <input bindinput="getIt" password="true" placeholder="请输入密码"></input>
+    </view>
+
+
+
+    <view wx:if="{{title_code}}">
+        <button bindtap="think_2" class="btn1">{{btn}}</button>
+    </view>
+    <view wx:else>
+        <button disabled="{{true}}" class="btn2">{{btn}}</button>
+    </view>
+
+
+    <view bindtap="go" style="color:white;font-size:28rpx;margin-top:12rpx;">
+        <text style="margin-left:18vw;">忘记密码</text>
+        <text style="margin-left:34vw;">无法登录</text>
+    </view>
+
+
+    <view class="tap" wx:if="{{title_code!=''}}" bindtap="onClearTap">
+        <view wx:if="{{title_code!=''}}" class="close" bindtap="onClearTap">
+            <view class="close-icon">
+                <text style="color:#fff;font-size:32rpx; ">X</text>
+            </view>
+        </view>
+    </view>
+
+</view>
+
+
+
+<view style="display:flex;position:fixed;top:80%;color:white;" class="bindtap">社交账号登录</view>
+<view style="display:flex;position:fixed;top:85%;">
+<image bindtap="goto" style="margin-left:17vw;width:80rpx;height:80rpx; display:inline-block;" src="/images/icons/weichat.svg"></image>
+<image bindtap="goto" style="margin-left:17vw;width:80rpx;height:80rpx; display:inline-block;" src="/images/icons/qq.svg"></image>
+<image bindtap="goto" style="margin-left:17vw;width:80rpx;height:80rpx; display:inline-block;" src="/images/icons/weibo.svg"></image>
+</view>

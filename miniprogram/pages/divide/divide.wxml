@@ -1,0 +1,340 @@
+<cu-custom bgImage="http://wx4.sinaimg.cn/mw690/006UdlVNgy1g2v2t1ih8jj31hc0p0qej.jpg">
+    <view slot="content">土著在线</view>
+</cu-custom>
+
+
+<view class="cu-bar search bg-white">
+    <view bindtap="avatar" class="cu-avatar round" style="background-image:url(https://image.weilanwl.com/img/square-2.jpg);"></view>
+    <view class="search-form round" bindtap="find">
+        <text class="icon-search"></text>
+        <input type="text" placeholder="搜索当地景点、达人、地陪" confirm-type="search"></input>
+    </view>
+    <view class="action">
+        <picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
+            <text>{{region[1]}}</text>
+        </picker>
+        <text class="icon-triangledownfill"></text>
+    </view>
+</view>
+
+     <!-- 点击回到顶部 -->
+    <image  class='top' catchtap='goTop' src='{{ ico }}'></image>
+
+<swiper class="screen-swiper {{DotStyle?'round-dot':'square-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+    <swiper-item wx:for="{{swiperLists}}" wx:key>
+        <image mode="aspectFill" src="{{item.url}}" wx:if="{{item.type=='image'}}"></image>
+    </swiper-item>
+</swiper>
+
+<view style="height:10rpx;"></view>
+<view class="grid col-4 padding-sm">
+    <view bindtap="go1" class="margin-tb-sm text-center">
+        <image style="width:90rpx;height:90rpx;" src="/images/daren/money.png"></image>
+        <text style="color:#999999;font-size:28rpx;">\n无隐形消费</text>
+    </view>
+    <view bindtap="go2" class="margin-tb-sm text-center">
+        <image style="width:90rpx;height:90rpx;" src="/images/daren/protect.png"></image>
+        <text style="color:#999999;font-size:28rpx;">\n安全保障</text>
+    </view>
+    <view bindtap="go3" class="margin-tb-sm text-center">
+        <image style="width:90rpx;height:90rpx;" src="/images/daren/service.png"></image>
+        <text style="color:#999999;font-size:28rpx;">\n24小时客服</text>
+    </view>
+    <view bindtap="go4" class="margin-tb-sm text-center">
+        <image style="width:90rpx;height:90rpx;" src="/images/daren/try.png"></image>
+        <text style="color:#999999;font-size:28rpx;">\n无忧保险</text>
+    </view>
+</view>
+
+
+<view style="margin-top:-10rpx;margin-left:20rpx;">
+    <text style="font-weight:bold;">热门土著</text>
+</view>
+<swiper class="screen-swiper" circular="true" autoplay="true" interval="2500" duration="500">
+    <swiper-item wx:for="{{swiperList}}" wx:key bindtap="openHome" data-item="{{item}}">
+        <view class='bg-white radius shadow-warp margin-top'>
+            <view class="flex justify-center">
+                <view class="text-xl padding text-red icon-hotfill">
+                    <text class="text-black text-bold">{{local}}人气{{item.title}}</text>
+                </view>
+            </view>
+            <view class="flex  justify-center">
+                <view bindtap="guideDetail" class="cu-avatar xl round " style="background-image:url({{item.url}});"></view>
+                <view style="margin-bottom:25rpx;">
+                    <text style="margin-left:30rpx;">{{item.username}}</text>
+                    <text wx:if="{{rand1<=27}}" decode="true" style="margin-left:10rpx;" class="icon-female text-pink">&nbsp;{{rand1}}\n</text>
+                    <text wx:if="{{rand1>27}}" decode="true" style="margin-left:10rpx;" class="icon-male text-blue">&nbsp;{{rand1}}\n</text>
+                    <text style="margin-left:30rpx;" decode="true">{{rand2}}次服务&nbsp;&nbsp;|&nbsp;&nbsp;{{rand3}}分 </text>
+                </view>
+            </view>
+            <view class="flex padding-bottom-xs justify-center">
+            </view>
+            <view class="flex padding-bottom justify-center">
+                <button class=' cu-btn  icon-{{item.isAdd?"":"add"}} padding-left-sm padding-right-sm ' style='background-color:#9AC2FF;color:white;' catchtap='add' data-index='{{index}}'>{{item.isAdd?'已关注':'关注'}}</button>
+            </view>
+        </view>
+    </swiper-item>
+</swiper>
+
+
+
+
+<view style="margin-bottom:20rpx;margin-left:20rpx;">
+    <text style="font-weight:bold;">土著列表</text>
+    <view bindtap="openTagList" style="background:#BFBFBF;width:300rpx;height:60rpx;border-radius:40rpx;line-height:60rpx;margin-top:-60rpx;margin-left:78% ;z-index:10">
+        <text style="margin-left:20rpx;" class="icon-tagfill text-white"></text>
+        <text style="color:white;font-size:32rpx;">筛选</text>
+        <text class="icon-triangledownfill  text-white "></text>
+    </view>
+</view>
+
+<view class="weui-tab">
+    <view class="weui-navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+            <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                <view class="weui-navbar__title">{{item}}</view>
+            </view>
+        </block>
+        <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+    </view>
+
+    <view bindtap="guideDetail"  class="weui-tab__panel">
+        <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+            <view style="height:30rpx;"></view>
+            <!-- 所有土著达人展示 -->
+            <!-- 1 -->
+            <view  class="tuzhu" style="margin-bottom:25rpx;">
+                <image style="mode:center;width:100%;border-radius: 15rpx 15rpx 0 0;" src="cloud://jxufe-utf5u.6a78-jxufe-utf5u-1259584938/store-images/鼓浪屿.jpg"></image>
+                <view style="position:relative;margin-top:-80rpx;margin-left:500rpx;z-index:11;">
+                    <text class="icon-location text-white" decode="true">&nbsp;{{local}}{{qu}}</text>
+                </view>
+
+                <view style="z-index:12;margin-left:20rpx;margin-top:-20rpx;" class="flex ">
+                    <view class="cu-avatar xl round " style="background-image:url(https://pic.qqtn.com/up/2020-2/2020020120073367824.jpg);"></view>
+                    <view style="margin-left:-15rpx;">
+                        <image style="width:50rpx;height:50rpx;" src="/images/message/daren.svg"></image>
+                    </view>
+                    <view style="margin-top:40rpx;">
+                        <text decode="true" style="margin-left:10rpx;font-size:35rpx;">Amy __土著达人&nbsp;&nbsp;</text>
+                        <text decode="true" style="margin-left:10rpx;" class="icon-male text-blue">&nbsp;26\n</text>
+                        <text style="margin-left:10rpx;margin-top:5rpx;" decode="true">48次服务&nbsp;&nbsp;|&nbsp;&nbsp;5.0分 </text>
+                    </view>
+                </view>
+                <view style="margin-top:5rpx;margin-bottom:20rpx;">
+                    <text style="margin-left:25rpx;" class="icon-tag text-gray"></text>
+                    <text style="color:#7A7A7A;" decode="true">&nbsp;达人带路&nbsp;/&nbsp;鼓浪屿&nbsp;/&nbsp;沙滩&nbsp;/&nbsp;海岛</text>
+                </view>
+            </view>
+            <!-- 2 -->
+            <view class="tuzhu" style="margin-bottom:25rpx;">
+                <image style="mode:center;width:100%;border-radius: 15rpx 15rpx 0 0;" src="cloud://jxufe-utf5u.6a78-jxufe-utf5u-1259584938/store-images/椰风寨2.jpg"></image>
+                <view style="position:relative;margin-top:-80rpx;margin-left:500rpx;z-index:11;">
+                    <text class="icon-location text-white" decode="true">&nbsp;{{local}}{{qu}}</text>
+                </view>
+
+                <view style="z-index:12;margin-left:20rpx;margin-top:-20rpx;" class="flex ">
+                    <view class="cu-avatar xl round " style="background-image:url(https://i01piccdn.sogoucdn.com/c5a841785bf50fee);"></view>
+                    <view style="margin-left:-15rpx;">
+                        <image style="width:50rpx;height:50rpx;" src="/images/message/daren.svg"></image>
+                    </view>
+                    <view style="margin-top:40rpx;">
+                        <text decode="true" style="margin-left:10rpx;font-size:35rpx;">Lina&nbsp;&nbsp;</text>
+                        <text decode="true" style="margin-left:10rpx;" class="icon-female text-pink">&nbsp;24\n</text>
+                        <text style="margin-left:10rpx;margin-top:5rpx;" decode="true">63次服务&nbsp;&nbsp;|&nbsp;&nbsp;4.9分 </text>
+                    </view>
+                </view>
+                <view style="margin-top:5rpx;margin-bottom:20rpx;">
+                    <text style="margin-left:25rpx;" class="icon-tag text-gray"></text>
+                    <text style="color:#7A7A7A;" decode="true">&nbsp;达人带路&nbsp;/&nbsp;特色体验&nbsp;/&nbsp;酒店民宿&nbsp;/&nbsp;当地用车</text>
+                </view>
+            </view>
+            <!-- 3 -->
+            <view class="tuzhu" style="margin-bottom:25rpx;">
+                <image style="mode:center;width:100%;border-radius: 15rpx 15rpx 0 0;" src="cloud://jxufe-utf5u.6a78-jxufe-utf5u-1259584938/store-images/椰风寨3.jpg"></image>
+                <view style="position:relative;margin-top:-80rpx;margin-left:500rpx;z-index:11;">
+                    <text class="icon-location text-white" decode="true">&nbsp;{{local}}{{qu}}</text>
+                </view>
+
+                <view style="z-index:12;margin-left:20rpx;margin-top:-20rpx;" class="flex ">
+                    <view class="cu-avatar xl round " style="background-image:url(https://i01piccdn.sogoucdn.com/335e40d04bf34579);"></view>
+                    <view style="margin-left:-15rpx;">
+                        <image style="width:50rpx;height:50rpx;" src="/images/message/daren.svg"></image>
+                    </view>
+                    <view style="margin-top:40rpx;">
+                        <text decode="true" style="margin-left:10rpx;font-size:35rpx;">Jenny?&nbsp;&nbsp;</text>
+                        <text decode="true" style="margin-left:10rpx;" class="icon-female text-pink">&nbsp;23\n</text>
+                        <text style="margin-left:10rpx;margin-top:5rpx;" decode="true">45次服务&nbsp;&nbsp;|&nbsp;&nbsp;4.8分 </text>
+                    </view>
+                </view>
+                <view style="margin-top:5rpx;margin-bottom:20rpx;">
+                    <text style="margin-left:25rpx;" class="icon-tag text-gray"></text>
+                    <text style="color:#7A7A7A;" decode="true">&nbsp;私车接送&nbsp;/&nbsp;移动小地图&nbsp;/&nbsp;潜水</text>
+                </view>
+            </view>
+            <!-- 4 -->
+            <view class="tuzhu" style="margin-bottom:25rpx;">
+                <image style="mode:center;width:100%;border-radius: 15rpx 15rpx 0 0;" src="cloud://jxufe-utf5u.6a78-jxufe-utf5u-1259584938/store-images/厦门猫咪博物馆.jpg"></image>
+                <view style="position:relative;margin-top:-80rpx;margin-left:500rpx;z-index:11;">
+                    <text class="icon-location text-white" decode="true">&nbsp;{{local}}{{qu}}</text>
+                </view>
+
+                <view style="z-index:12;margin-left:20rpx;margin-top:-20rpx;" class="flex ">
+                    <view class="cu-avatar xl round " style="background-image:url(https://image.weilanwl.com/img/square-2.jpg);"></view>
+                    <view style="margin-left:-15rpx;">
+                        <image style="width:50rpx;height:50rpx;" src="/images/message/daren.svg"></image>
+                    </view>
+                    <view style="margin-top:40rpx;">
+                        <text decode="true" style="margin-left:10rpx;font-size:35rpx;">Ms.Chen??&nbsp;&nbsp;</text>
+                        <text decode="true" style="margin-left:10rpx;" class="icon-female text-pink">&nbsp;23\n</text>
+                        <text style="margin-left:10rpx;margin-top:5rpx;" decode="true">48次服务&nbsp;&nbsp;|&nbsp;&nbsp;4.9分 </text>
+                    </view>
+                </view>
+                <view style="margin-top:5rpx;margin-bottom:20rpx;">
+                    <text style="margin-left:25rpx;" class="icon-tag text-gray"></text>
+                    <text style="color:#7A7A7A;" decode="true">&nbsp;达人带路&nbsp;/&nbsp;民谣歌手&nbsp;/&nbsp;逗比&nbsp;/&nbsp;铲屎官</text>
+                </view>
+            </view>
+            <!-- 5 -->
+            <view class="tuzhu" style="margin-bottom:25rpx;">
+                <image style="mode:center;width:100%;border-radius: 15rpx 15rpx 0 0;" src="cloud://jxufe-utf5u.6a78-jxufe-utf5u-1259584938/store-images/厦门观音山.jpg"></image>
+                <view style="position:relative;margin-top:-80rpx;margin-left:500rpx;z-index:11;">
+                    <text class="icon-location text-white" decode="true">&nbsp;{{local}}{{qu}}</text>
+                </view>
+
+                <view style="z-index:12;margin-left:20rpx;margin-top:-20rpx;" class="flex ">
+                    <view class="cu-avatar xl round " style="background-image:url(https://i01piccdn.sogoucdn.com/335e40d04bf34579);"></view>
+                    <view style="margin-left:-15rpx;">
+                        <image style="width:50rpx;height:50rpx;" src="/images/message/daren.svg"></image>
+                    </view>
+                    <view style="margin-top:40rpx;">
+                        <text decode="true" style="margin-left:10rpx;font-size:35rpx;">伊依&nbsp;&nbsp;</text>
+                        <text decode="true" style="margin-left:10rpx;" class="icon-female text-pink">&nbsp;22\n</text>
+                        <text style="margin-left:10rpx;margin-top:5rpx;" decode="true">48次服务&nbsp;&nbsp;|&nbsp;&nbsp;5.0分 </text>
+                    </view>
+                </view>
+                <view style="margin-top:5rpx;margin-bottom:20rpx;">
+                    <text style="margin-left:25rpx;" class="icon-tag text-gray"></text>
+                    <text style="color:#7A7A7A;" decode="true">&nbsp;达人带路&nbsp;/&nbsp;特色体验&nbsp;/&nbsp;酒店民宿&nbsp;/&nbsp;当地用车</text>
+                </view>
+            </view>
+
+
+
+
+        </view>
+        <view style="height:30rpx;"></view>
+        <!-- 土著地陪 -->
+        <view bindtap="guideDetail" class="weui-tab__content" hidden="{{activeIndex != 1}}">
+            <!-- 1 -->
+            <view class="tuzhu" style="margin-bottom:25rpx;">
+                <image style="mode:center;width:100%;border-radius: 15rpx 15rpx 0 0;" src="cloud://jxufe-utf5u.6a78-jxufe-utf5u-1259584938/store-images/日月谷温泉.jpg"></image>
+                <view style="position:relative;margin-top:-80rpx;margin-left:500rpx;z-index:11;">
+                    <text class="icon-location text-white" decode="true">&nbsp;{{local}}{{qu}}</text>
+                </view>
+
+                <view style="z-index:12;margin-left:20rpx;margin-top:-20rpx;" class="flex ">
+                    <view class="cu-avatar xl round " style="background-image:url(https://i03piccdn.sogoucdn.com/6bdcf349848a52f7);"></view>
+                    <view style="margin-left:-15rpx;">
+                        <image style="width:50rpx;height:35rpx;" src="/images/message/dipei.png"></image>
+                    </view>
+                    <view style="margin-top:40rpx;">
+                        <text decode="true" style="margin-left:10rpx;font-size:35rpx;">江涵秋影&nbsp;&nbsp;</text>
+                        <text decode="true" style="margin-left:10rpx;" class="icon-male text-blue">&nbsp;24\n</text>
+                        <text style="margin-left:10rpx;margin-top:5rpx;" decode="true">62次服务&nbsp;&nbsp;|&nbsp;&nbsp;4.8分 </text>
+                    </view>
+                </view>
+                <view style="margin-top:5rpx;margin-bottom:20rpx;">
+                    <text style="margin-left:25rpx;" class="icon-tag text-gray"></text>
+                    <text style="color:#7A7A7A;" decode="true">&nbsp;私车接送&nbsp;/&nbsp;移动小地图&nbsp;/&nbsp;潜水</text>
+                </view>
+            </view>
+            <!-- 2 -->
+            <view class="tuzhu" style="margin-bottom:25rpx;">
+                <image style="mode:center;width:100%;border-radius: 15rpx 15rpx 0 0;" src="cloud://jxufe-utf5u.6a78-jxufe-utf5u-1259584938/store-images/日光岩.jpg"></image>
+                <view style="position:relative;margin-top:-80rpx;margin-left:500rpx;z-index:11;">
+                    <text class="icon-location text-white" decode="true">&nbsp;{{local}}{{qu}}</text>
+                </view>
+
+                <view style="z-index:12;margin-left:20rpx;margin-top:-20rpx;" class="flex ">
+                    <view class="cu-avatar xl round " style="background-image:url(https://i01piccdn.sogoucdn.com/c5a841785bf50fee);"></view>
+                    <view style="margin-left:-15rpx;">
+                        <image style="width:50rpx;height:35rpx;" src="/images/message/dipei.png"></image>
+                    </view>
+                    <view style="margin-top:40rpx;">
+                        <text decode="true" style="margin-left:10rpx;font-size:35rpx;">萌丫&nbsp;&nbsp;</text>
+                        <text decode="true" style="margin-left:10rpx;" class="icon-female text-pink">&nbsp;23\n</text>
+                        <text style="margin-left:10rpx;margin-top:5rpx;" decode="true">78次服务&nbsp;&nbsp;|&nbsp;&nbsp;4.9分 </text>
+                    </view>
+                </view>
+                <view style="margin-top:5rpx;margin-bottom:20rpx;">
+                    <text style="margin-left:25rpx;" class="icon-tag text-gray"></text>
+                    <text style="color:#7A7A7A;" decode="true">&nbsp;跟拍摄影&nbsp;/&nbsp;P图小能手&nbsp;/&nbsp;元气少女</text>
+                </view>
+            </view><!-- 3 -->
+            <view class="tuzhu" style="margin-bottom:25rpx;">
+                <image style="mode:center;width:100%;border-radius: 15rpx 15rpx 0 0;" src="cloud://jxufe-utf5u.6a78-jxufe-utf5u-1259584938/store-images/方特梦幻王国.jpg"></image>
+                <view style="position:relative;margin-top:-80rpx;margin-left:500rpx;z-index:11;">
+                    <text class="icon-location text-white" decode="true">&nbsp;{{local}}{{qu}}</text>
+                </view>
+
+                <view style="z-index:12;margin-left:20rpx;margin-top:-20rpx;" class="flex ">
+                    <view class="cu-avatar xl round " style="background-image:url(https://pic.qqtn.com/up/2020-2/2020020120073367824.jpg);"></view>
+                    <view style="margin-left:-15rpx;">
+                        <image style="width:50rpx;height:35rpx;" src="/images/message/dipei.png"></image>
+                    </view>
+                    <view style="margin-top:40rpx;">
+                        <text decode="true" style="margin-left:10rpx;font-size:35rpx;">spark&nbsp;&nbsp;</text>
+                        <text decode="true" style="margin-left:10rpx;" class="icon-male text-blue">&nbsp;22\n</text>
+                        <text style="margin-left:10rpx;margin-top:5rpx;" decode="true">39次服务&nbsp;&nbsp;|&nbsp;&nbsp;4.7分 </text>
+                    </view>
+                </view>
+                <view style="margin-top:5rpx;margin-bottom:20rpx;">
+                    <text style="margin-left:25rpx;" class="icon-tag text-gray"></text>
+                    <text style="color:#7A7A7A;" decode="true">&nbsp;民谣歌手&nbsp;/&nbsp;逗比&nbsp;/&nbsp;铲屎官</text>
+                </view>
+            </view><!-- 4 -->
+            <view class="tuzhu" style="margin-bottom:25rpx;">
+                <image style="mode:center;width:100%;border-radius: 15rpx 15rpx 0 0;" src="cloud://jxufe-utf5u.6a78-jxufe-utf5u-1259584938/store-images/厦门环岛路.jpg"></image>
+                <view style="position:relative;margin-top:-80rpx;margin-left:500rpx;z-index:11;">
+                    <text class="icon-location text-white" decode="true">&nbsp;{{local}}{{qu}}</text>
+                </view>
+
+                <view style="z-index:12;margin-left:20rpx;margin-top:-20rpx;" class="flex ">
+                    <view class="cu-avatar xl round " style="background-image:url(https://i01piccdn.sogoucdn.com/335e40d04bf34579);"></view>
+                    <view style="margin-left:-15rpx;">
+                        <image style="width:50rpx;height:35rpx;" src="/images/message/dipei.png"></image>
+                    </view>
+                    <view style="margin-top:40rpx;">
+                        <text decode="true" style="margin-left:10rpx;font-size:35rpx;">Fme&nbsp;&nbsp;</text>
+                        <text decode="true" style="margin-left:10rpx;" class="icon-female text-pink">&nbsp;21\n</text>
+                        <text style="margin-left:10rpx;margin-top:5rpx;" decode="true">35次服务&nbsp;&nbsp;|&nbsp;&nbsp;4.8分 </text>
+                    </view>
+                </view>
+                <view style="margin-top:5rpx;margin-bottom:20rpx;">
+                    <text style="margin-left:25rpx;" class="icon-tag text-gray"></text>
+                    <text style="color:#7A7A7A;" decode="true">&nbsp;美食探测仪&nbsp;/&nbsp;风俗百科全书</text>
+                </view>
+            </view>
+
+
+
+        </view>
+    </view>
+</view>
+
+
+<view class="cu-modal bottom-modal {{isShow}}" bindtap="hideModal">
+    <view class="cu-dialog">
+        <view class="cu-bar bg-white">
+            <view class="action text-grey" catchtap="hideModal">取消</view>
+            <view class="action text-blue" catchtap="selected">确定</view>
+        </view>
+        <view class="grid col-3 padding-sm">
+            <view wx:for="{{checkbox}}" class="padding-sm" wx:key="{{index}}">
+                <button class="cu-btn blue lg block {{item.checked?'bg-blue':'line-blue'}}" catchtap="ChooseCheckbox" data-value="{{item.value}}"> {{item.name}}
+                    <view class=" margin-left-xs cu-tag sm round {{item.checked?'bg-white text-blue':'bg-blue'}}" wx:if="{{item.hot}}">HOT</view>
+                </button>
+            </view>
+        </view>
+    </view>
+</view>
